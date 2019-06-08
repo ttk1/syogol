@@ -1,0 +1,27 @@
+{
+  "name": "syogol",
+  "version": "1.0.0",
+  "description": "Share your own \"Game of Life\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "dist": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttk1/syogol.git"
+  },
+  "author": "ttk1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ttk1/syogol/issues"
+  },
+  "homepage": "https://github.com/ttk1/syogol#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
+  }
+}
