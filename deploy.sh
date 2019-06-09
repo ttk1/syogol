@@ -19,5 +19,14 @@ rm -r tmp
 git config --global user.name 'CircleCi'
 git config --global user.email "tama@ttk1.net"
 git add -A
+
+set +e
 git commit -m 'gh-pages deploy'
-git push origin gh-pages
+result=$?
+set -e
+
+if [[ $result = 0]]; then
+  git push origin gh-pages
+else
+  echo 'nothing to commit'
+fi
