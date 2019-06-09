@@ -3,6 +3,9 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:latest
+    branches:
+      only:
+        - master
     steps:
       - checkout
       - restore_cache:
@@ -14,12 +17,3 @@ jobs:
           key: node_modules
           paths:
             - node_modules
-
-workflows:
-  version: 2
-  deploy:
-    jobs:
-      - deploy:
-          filters:
-            branches:
-              only: master

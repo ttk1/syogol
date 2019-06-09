@@ -12,7 +12,7 @@ cp -r public/* tmp
 cp -r dist/* tmp
 
 git checkout --force gh-pages
-ls -a | grep -E -v '^(\.|\.\.|\.gitignore|\.git|tmp|node_modules|CNAME)$' | xargs rm -r
+ls -a | grep -E -v '^(\.|\.\.|\.gitignore|\.git|\.circleci|tmp|node_modules|CNAME)$' | xargs rm -r
 mv tmp/* .
 rm -r tmp
 
