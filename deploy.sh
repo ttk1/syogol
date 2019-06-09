@@ -16,6 +16,8 @@ ls -a | grep -E -v '^(\.|\.\.|\.gitignore|\.git|tmp|node_modules|CNAME)$' | xarg
 mv tmp/* .
 rm -r tmp
 
+git config --global user.name 'CircleCi'
+git config --global user.email "tama@ttk1.net"
 git add -A
 git commit -m 'gh-pages deploy'
 git push origin gh-pages
