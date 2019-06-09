@@ -1,19 +1,19 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:latest
-    branches:
-      only: 
-        - master
-    steps:
-      - checkout
-      - restore_cache:
-        key: node_moduels
-      - run:
-        name: deploy
-        command: ./deploy.sh
-      - save_cache:
-        paths:
-          - key: node_moduels
-          - node_moduels
+    build:
+        docker:
+            - image: circleci/node:latest
+        branches:
+            only: 
+                - master
+        steps:
+            - checkout
+            - restore_cache:
+                key: node_modules
+            - run:
+                name: deploy
+                command: ./deploy.sh
+            - save_cache:
+                paths:
+                    - key: node_modules
+                    - node_modules
