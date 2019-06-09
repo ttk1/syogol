@@ -1,7 +1,9 @@
 window.onload = () => {
     const container = document.getElementById('container');
+    const share = document.getElementById('share');
     const canvas = document.createElement('canvas');
     container.appendChild(canvas);
+    require('./share_button.js').share(share);
     return require('./gol.js').start(canvas, getParam('data'));
 }
 
