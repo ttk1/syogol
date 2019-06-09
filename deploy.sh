@@ -25,7 +25,7 @@ git commit -m 'gh-pages deploy'
 result=$?
 set -e
 
-if [[ $result = 0]]; then
+if [[ $result = 0 ]]; then
   git push origin gh-pages
 else
   echo 'nothing to commit'
