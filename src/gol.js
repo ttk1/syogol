@@ -1,5 +1,9 @@
 const ser = require('./serde.js').ser;
 const de = require('./serde.js').de;
+const dict = require('./serde.js').dict;
+
+const encode = require('./rle.js').encode;
+const decode = require('./rle.js').decode;
 
 const DEFAULT_WIDTH = 50;
 const DEFAULT_HEIGHT = 50;
@@ -201,15 +205,14 @@ function init_button(field) {
             cell_size: field.cell_size,
             field: field.field
         };
-        const serialized = ser(field_data);
-        window.location.search = '?data=' + serialized;
+        window.location.search = '?data=' + encode(ser(field_data), dict);
     });
 }
 
-exports.start = (canvas, serialized) => {
+exports.start = (canvas, data) => {
     var field;
-    if (serialized) {
-        const field_data = de(serialized);
+    if (data) {
+        const field_data = de(decode(data, dict));
         field = new Field(canvas, field_data.width, field_data.height,
             field_data.cell_size, field_data.field);
     } else {

@@ -3,5 +3,8 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"javascript.suggestionActions.enabled": false
+	}
 }
