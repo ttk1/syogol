@@ -12,7 +12,7 @@ jobs:
                 key: node_modules
             - run:
                 name: deploy
-                command: ./deploy.sh
+                command: ls
             - save_cache:
                 key: node_modules
                 paths:
