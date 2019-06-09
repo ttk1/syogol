@@ -171,8 +171,6 @@ class Field {
         this.ctx.fillStyle = 'white';
         this.ctx.fillRect(x * this.cell_size + 0.5, y * this.cell_size + 0.5, this.cell_size - 0.5, this.cell_size - 0.5);
     }
-
-    save() {}
 }
 
 function init_button(field) {
