@@ -1,17 +1,20 @@
-exports.share = element => {
-    const share_button = document.createElement('a');
-    share_button.innerHTML = 'Tweet #SYOGOL';
-    share_button.href = 'https://twitter.com/intent/tweet?button_hashtag=SYOGOL&ref_src=twsrc%5Etfw';
-    share_button.classList.add('twitter-hashtag-button');
-    //share_button.dataset.size = 'large';
-    share_button.dataset.text = 'ライフゲームのパターンを作りました。';
-    share_button.dataset.url = window.location;
-    share_button.dataset.lang = 'ja';
-    share_button.dataset.showCount = 'false';
-    const widgets_script = document.createElement('script');
-    widgets_script.async = true;
-    widgets_script.src = 'https://platform.twitter.com/widgets.js';
-    widgets_script.charset = 'utf-8';
-    element.appendChild(share_button);
-    element.appendChild(widgets_script);
+exports.share = () => {
+    const share_button = document.createElement('span');
+    const a = document.createElement('a');
+    a.innerHTML = 'Tweet #SYOGOL';
+    a.href = 'https://twitter.com/intent/tweet?button_hashtag=SYOGOL&ref_src=twsrc%5Etfw';
+    a.classList.add('twitter-hashtag-button');
+    a.dataset.text = 'ライフゲームのパターンを作りました。';
+    a.dataset.url = window.location;
+    a.dataset.hashtags = 'たまーず工房';
+    a.dataset.lang = 'ja';
+    a.dataset.showCount = 'false';
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://platform.twitter.com/widgets.js';
+    script.charset = 'utf-8';
+    share_button.appendChild(a);
+    share_button.appendChild(script);
+    share_button.style.position = 'absolute';
+    return share_button;
 }

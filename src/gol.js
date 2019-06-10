@@ -1,9 +1,11 @@
-const ser = require('./serde.js').ser;
-const de = require('./serde.js').de;
-const dict = require('./serde.js').dict;
+const ser = require('./serde').ser;
+const de = require('./serde').de;
+const dict = require('./serde').dict;
 
-const encode = require('./rle.js').encode;
-const decode = require('./rle.js').decode;
+const encode = require('./rle').encode;
+const decode = require('./rle').decode;
+
+const share = require('./share_button').share;
 
 const DEFAULT_WIDTH = 50;
 const DEFAULT_HEIGHT = 50;
@@ -176,7 +178,6 @@ class Field {
 function init_button(field) {
     const container = document.getElementById('container');
     const button_area = document.createElement('div');
-    button_area.style.display = 'block';
     container.appendChild(button_area);
 
     const start_button = document.createElement('button');
@@ -192,6 +193,7 @@ function init_button(field) {
     button_area.appendChild(stop_button);
     button_area.appendChild(reset_button);
     button_area.appendChild(save_button);
+    button_area.appendChild(share());
 
     start_button.addEventListener('click', () => field.start());
     stop_button.addEventListener('click', () => field.stop());
